@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Profile · TrueTrace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: transparent;
+    color: inherit;
+    transition: background-color 0.15s ease;
+  }
+  .row:hover { background: var(--surface-tinted); }
+  .row-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: var(--surface-mint);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .row-icon .material-symbols-outlined { font-size: 20px; }
+</style>
+</head>
+<body>
+
+<div class="phone-shell">
+
+  <!-- Top bar -->
+  <header class="phone-header" style="padding: 20px 20px 12px; display:flex; align-items:center; justify-content:space-between;">
+    <p style="margin:0; font-weight:700; font-size:16px;">Profile</p>
+    <button style="width:40px; height:40px; border-radius:999px; background: var(--surface-tinted); display:flex; align-items:center; justify-content:center; border:0;">
+      <span class="material-symbols-outlined" style="font-size:20px; color: var(--primary-ink);">settings</span>
+    </button>
+  </header>
+
+  <div class="phone-scroll">
+
+    <!-- Identity block -->
+    <section style="padding: 16px 24px 0; text-align:center;">
+      <div style="position: relative; width: 92px; height: 92px; margin: 0 auto;">
+        <div style="width: 92px; height: 92px; border-radius: 999px; background: linear-gradient(135deg, var(--surface-mint), var(--primary-soft)); display:flex; align-items:center; justify-content:center; font-family: 'Fraunces', serif; font-size: 34px; color: var(--primary); font-weight: 400;">A</div>
+        <div style="position:absolute; right:-2px; bottom:-2px; width:26px; height:26px; border-radius:999px; background: var(--primary); border: 3px solid var(--surface); display:flex; align-items:center; justify-content:center;">
+          <span class="material-symbols-outlined icon-fill" style="color: #c8dec9; font-size:12px;">verified</span>
+        </div>
+      </div>
+      <h1 class="display" style="font-size: 28px; margin: 16px 0 0;">Anju Sharma</h1>
+      <p class="mute" style="font-size: 13px; margin: 4px 0 0;">@anjusharma · Member since March 2024</p>
+
+      <div style="display:inline-flex; align-items:center; gap:6px; margin-top: 14px; padding: 6px 12px; border-radius:999px; background: var(--accent-soft);">
+        <span class="material-symbols-outlined icon-fill" style="font-size:14px; color: var(--accent);">park</span>
+        <span style="font-size:11px; font-weight:700; color: var(--accent); letter-spacing:0.06em;">GROVE GUARDIAN · LVL 3</span>
+      </div>
+    </section>
+
+    <!-- Key stats -->
+    <section style="padding: 28px 24px 0;">
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+        <div class="card-tinted" style="text-align:center; padding: 14px 8px;">
+          <p class="number" style="font-size: 26px; margin:0; color: var(--primary);">127</p>
+          <p class="quiet" style="font-size:10px; letter-spacing:0.08em; text-transform:uppercase; margin:4px 0 0;">Scans</p>
+        </div>
+        <div class="card-tinted" style="text-align:center; padding: 14px 8px;">
+          <p class="number" style="font-size: 26px; margin:0; color: var(--primary);">23</p>
+          <p class="quiet" style="font-size:10px; letter-spacing:0.08em; text-transform:uppercase; margin:4px 0 0;">Brands</p>
+        </div>
+        <div class="card-tinted" style="text-align:center; padding: 14px 8px;">
+          <p class="number" style="font-size: 26px; margin:0; color: var(--primary);">89<span style="font-size:12px; color: var(--ink-mute);">%</span></p>
+          <p class="quiet" style="font-size:10px; letter-spacing:0.08em; text-transform:uppercase; margin:4px 0 0;">Ethical</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Saved / collections -->
+    <section style="padding: 28px 24px 0;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding: 0 4px 12px;">
+        <p class="eyebrow">Your library</p>
+        <a href="#" style="font-size: 11px; font-weight: 600; color: var(--primary);">Manage</a>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <a href="#" class="card" style="padding: 14px;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom: 10px;">
+            <span class="material-symbols-outlined icon-fill" style="font-size:18px; color: var(--primary);">bookmark</span>
+            <span style="font-weight:700; font-size:13px;">Saved</span>
+          </div>
+          <p class="number" style="font-size:22px; margin:0; color: var(--primary);">34</p>
+          <p class="quiet" style="font-size:11px; margin:2px 0 0;">Products</p>
+        </a>
+        <a href="#" class="card" style="padding: 14px;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom: 10px;">
+            <span class="material-symbols-outlined icon-fill" style="font-size:18px; color: var(--primary);">flag</span>
+            <span style="font-weight:700; font-size:13px;">Flagged</span>
+          </div>
+          <p class="number" style="font-size:22px; margin:0; color: var(--primary);">4</p>
+          <p class="quiet" style="font-size:11px; margin:2px 0 0;">Under review</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Account rows -->
+    <section style="padding: 28px 16px 0;">
+      <p class="eyebrow" style="padding: 0 20px 8px;">Account</p>
+
+      <a href="#" class="row">
+        <div class="row-icon"><span class="material-symbols-outlined">notifications</span></div>
+        <div style="flex:1;">
+          <p style="margin:0; font-weight:600; font-size:14px;">Notifications</p>
+          <p class="mute" style="margin:2px 0 0; font-size:11px;">Scan alerts, editorials</p>
+        </div>
+        <span class="material-symbols-outlined" style="font-size:18px; color: var(--ink-quiet);">chevron_right</span>
+      </a>
+
+      <a href="#" class="row">
+        <div class="row-icon"><span class="material-symbols-outlined">shield_person</span></div>
+        <div style="flex:1;">
+          <p style="margin:0; font-weight:600; font-size:14px;">Privacy</p>
+          <p class="mute" style="margin:2px 0 0; font-size:11px;">Who can see your scans</p>
+        </div>
+        <span class="material-symbols-outlined" style="font-size:18px; color: var(--ink-quiet);">chevron_right</span>
+      </a>
+
+      <a href="#" class="row">
+        <div class="row-icon"><span class="material-symbols-outlined">download</span></div>
+        <div style="flex:1;">
+          <p style="margin:0; font-weight:600; font-size:14px;">Export data</p>
+          <p class="mute" style="margin:2px 0 0; font-size:11px;">Your scan history as CSV</p>
+        </div>
+        <span class="material-symbols-outlined" style="font-size:18px; color: var(--ink-quiet);">chevron_right</span>
+      </a>
+
+      <a href="#" class="row">
+        <div class="row-icon"><span class="material-symbols-outlined">credit_card</span></div>
+        <div style="flex:1;">
+          <p style="margin:0; font-weight:600; font-size:14px;">Supporter</p>
+          <p class="mute" style="margin:2px 0 0; font-size:11px;">Support independent audits</p>
+        </div>
+        <span class="chip chip-clay" style="margin-right: 4px;">Upgrade</span>
+      </a>
+    </section>
+
+    <!-- Info rows -->
+    <section style="padding: 20px 16px 0;">
+      <p class="eyebrow" style="padding: 0 20px 8px;">About</p>
+
+      <a href="#" class="row">
+        <div class="row-icon" style="background: var(--accent-soft); color: var(--accent);"><span class="material-symbols-outlined">menu_book</span></div>
+        <div style="flex:1;">
+          <p style="margin:0; font-weight:600; font-size:14px;">How we verify</p>
+        </div>
+        <span class="material-symbols-outlined" style="font-size:18px; color: var(--ink-quiet);">chevron_right</span>
+      </a>
+
+      <a href="#" class="row">
+        <div class="row-icon" style="background: var(--accent-soft); color: var(--accent);"><span class="material-symbols-outlined">help</span></div>
+        <div style="flex:1;">
+          <p style="margin:0; font-weight:600; font-size:14px;">Help & support</p>
+        </div>
+        <span class="material-symbols-outlined" style="font-size:18px; color: var(--ink-quiet);">chevron_right</span>
+      </a>
+
+      <a href="index.html" class="row">
+        <div class="row-icon" style="background: var(--accent-soft); color: var(--accent);"><span class="material-symbols-outlined">logout</span></div>
+        <div style="flex:1;">
+          <p style="margin:0; font-weight:600; font-size:14px;">Sign out</p>
+        </div>
+      </a>
+    </section>
+
+    <p class="quiet" style="text-align:center; font-size:11px; margin: 36px 0 12px;">TrueTrace · v0.9 beta</p>
+
+  </div>
+
+  <!-- Bottom nav -->
+  <nav class="phone-nav">
+    <div class="nav-tabs">
+      <a href="home.html" class="nav-tab">
+        <span class="material-symbols-outlined">home</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="impact.html" class="nav-tab">
+        <span class="material-symbols-outlined">eco</span>
+        <span class="nav-label">Impact</span>
+      </a>
+      <a href="scan.html" class="nav-scan" aria-label="Scan">
+        <span class="material-symbols-outlined">qr_code_scanner</span>
+      </a>
+      <a href="supply-chain.html" class="nav-tab">
+        <span class="material-symbols-outlined">explore</span>
+        <span class="nav-label">Explore</span>
+      </a>
+      <a href="profile.html" class="nav-tab active">
+        <span class="material-symbols-outlined">person</span>
+        <span class="nav-label">Profile</span>
+      </a>
+    </div>
+  </nav>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Scan · TrueTrace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .scan-bg {
+    background: radial-gradient(120% 80% at 50% 0%, #163c30 0%, #0a2319 60%, #05130d 100%);
+  }
+  .scan-line {
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c8dec9 50%, transparent);
+    box-shadow: 0 0 24px 2px rgba(200, 222, 201, 0.45);
+    animation: scan 2.4s cubic-bezier(0.55, 0, 0.45, 1) infinite;
+  }
+  @keyframes scan {
+    0%, 100% { top: 18%; opacity: 0; }
+    10% { opacity: 1; }
+    50% { top: 78%; opacity: 1; }
+    90% { opacity: 1; }
+  }
+  .corner {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-color: #c8dec9;
+    border-style: solid;
+    border-width: 0;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #c8dec9;
+    display: inline-block;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  .dot:nth-child(2) { animation-delay: 0.2s; }
+  .dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+</style>
+</head>
+<body>
+
+<div class="phone-shell scan-bg" style="color: #f9f7f2;">
+
+  <!-- Top bar -->
+  <header style="flex-shrink:0; padding: 22px 24px 14px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="home.html" style="width:40px; height:40px; border-radius:999px; background: rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; color: #f9f7f2;">
+      <span class="material-symbols-outlined" style="font-size:20px;">arrow_back</span>
+    </a>
+    <p style="margin:0; font-weight:700; font-size:14px; letter-spacing:0.04em;">Scan product</p>
+    <button style="width:40px; height:40px; border-radius:999px; background: rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; color: #f9f7f2; border:0;">
+      <span class="material-symbols-outlined" style="font-size:20px;">flashlight_on</span>
+    </button>
+  </header>
+
+  <!-- Scanner viewport -->
+  <main style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 0 24px; position:relative;">
+
+    <div style="position: relative; width: 260px; height: 260px;">
+      <!-- Corners -->
+      <span class="corner" style="top:0; left:0; border-top-width:2px; border-left-width:2px; border-top-left-radius: 16px;"></span>
+      <span class="corner" style="top:0; right:0; border-top-width:2px; border-right-width:2px; border-top-right-radius: 16px;"></span>
+      <span class="corner" style="bottom:0; left:0; border-bottom-width:2px; border-left-width:2px; border-bottom-left-radius: 16px;"></span>
+      <span class="corner" style="bottom:0; right:0; border-bottom-width:2px; border-right-width:2px; border-bottom-right-radius: 16px;"></span>
+
+      <!-- Mock product silhouette -->
+      <div style="position:absolute; inset: 32px; border-radius: 16px; overflow: hidden; opacity: 0.55;">
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&q=80&auto=format&fit=crop"
+             alt=""
+             style="width:100%; height:100%; object-fit:cover; filter: grayscale(0.3) brightness(0.7) contrast(1.1);" />
+      </div>
+
+      <!-- Scan line -->
+      <div class="scan-line"></div>
+    </div>
+
+    <!-- Status -->
+    <div style="margin-top: 36px; text-align:center;">
+      <div style="display:inline-flex; gap:6px; align-items:center; padding: 5px 12px; background: rgba(200, 222, 201, 0.12); border-radius:999px; margin-bottom: 16px;">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span style="font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color: #c8dec9; margin-left:4px;">Reading</span>
+      </div>
+      <p class="display" style="font-size: 26px; margin: 0; color: #f9f7f2;">Hold steady</p>
+      <p style="margin: 8px auto 0; font-size: 13px; color: rgba(249, 247, 242, 0.6); max-width: 260px; line-height:1.5;">
+        Center the barcode or NFC tag within the frame. Ledger lookup takes 1–2 seconds.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Bottom: mode toggle + quick tip -->
+  <section style="flex-shrink:0; padding: 0 24px 24px;">
+
+    <div style="display:flex; justify-content:center; margin-bottom: 20px;">
+      <div style="display:flex; gap:4px; padding: 4px; border-radius:999px; background: rgba(255,255,255,0.08); backdrop-filter: blur(12px);">
+        <button onclick="location.href='product.html'"
+                style="padding: 9px 20px; border-radius: 999px; background: #f9f7f2; color: var(--primary-ink); font-weight:700; font-size:12px; border:0; letter-spacing:0.04em;">
+          Camera
+        </button>
+        <button style="padding: 9px 20px; border-radius: 999px; background: transparent; color: rgba(249, 247, 242, 0.6); font-weight:600; font-size:12px; border:0; letter-spacing:0.04em;">
+          NFC
+        </button>
+        <button style="padding: 9px 20px; border-radius: 999px; background: transparent; color: rgba(249, 247, 242, 0.6); font-weight:600; font-size:12px; border:0; letter-spacing:0.04em;">
+          Manual
+        </button>
+      </div>
+    </div>
+
+    <!-- Recent scan chip -->
+    <a href="product.html" style="display:flex; align-items:center; gap:12px; padding: 12px 16px; border-radius: 16px; background: rgba(255,255,255,0.07); backdrop-filter: blur(12px); color: #f9f7f2;">
+      <div style="width:36px; height:36px; border-radius: 10px; background: rgba(200, 222, 201, 0.15); display:flex; align-items:center; justify-content:center;">
+        <span class="material-symbols-outlined" style="font-size:20px; color:#c8dec9;">history</span>
+      </div>
+      <div style="flex:1; min-width:0;">
+        <p style="margin:0; font-size:13px; font-weight:700;">Last scan · Altura Organic Coffee</p>
+        <p style="margin:2px 0 0; font-size:11px; color: rgba(249,247,242,0.55);">2 minutes ago · A rating</p>
+      </div>
+      <span class="material-symbols-outlined" style="font-size:18px; color: rgba(249,247,242,0.5);">arrow_forward</span>
+    </a>
+
+  </section>
+
+  <!-- Bottom nav -->
+  <nav class="phone-nav" style="background: rgba(10, 25, 18, 0.75); border-top-color: rgba(255,255,255,0.08);">
+    <div class="nav-tabs">
+      <a href="home.html" class="nav-tab" style="color: rgba(249,247,242,0.5);">
+        <span class="material-symbols-outlined">home</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="impact.html" class="nav-tab" style="color: rgba(249,247,242,0.5);">
+        <span class="material-symbols-outlined">eco</span>
+        <span class="nav-label">Impact</span>
+      </a>
+      <a href="scan.html" class="nav-scan" aria-label="Scan">
+        <span class="material-symbols-outlined">qr_code_scanner</span>
+      </a>
+      <a href="supply-chain.html" class="nav-tab" style="color: rgba(249,247,242,0.5);">
+        <span class="material-symbols-outlined">explore</span>
+        <span class="nav-label">Explore</span>
+      </a>
+      <a href="profile.html" class="nav-tab" style="color: rgba(249,247,242,0.5);">
+        <span class="material-symbols-outlined">person</span>
+        <span class="nav-label">Profile</span>
+      </a>
+    </div>
+  </nav>
+
+</div>
+
+</body>
+</html>

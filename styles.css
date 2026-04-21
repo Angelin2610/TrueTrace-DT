@@ -1,0 +1,297 @@
+/* =========================================
+   TrueTrace — shared design tokens & phone frame
+   ========================================= */
+
+:root {
+  /* Surfaces */
+  --surface: #f9f7f2;
+  --surface-paper: #ffffff;
+  --surface-tinted: #efebe1;
+  --surface-mint: #e3efe6;
+  --surface-warm: #f4ede0;
+  /* Brand */
+  --primary: #0f3d2e;
+  --primary-ink: #07231a;
+  --primary-soft: #c8dec9;
+  --secondary: #4a6b5a;
+  /* Accents */
+  --accent: #b6573a;         /* terracotta */
+  --accent-soft: #f3dacb;
+  --gold: #b08a3e;
+  --gold-soft: #efe3c6;
+  /* Text */
+  --ink: #0a1912;
+  --ink-mute: #5f6c63;
+  --ink-quiet: #97a199;
+  --on-primary: #f8faf8;
+  /* Lines */
+  --line: #e3ddcf;
+  --line-soft: #eee8da;
+  /* Outside the phone */
+  --outer: #d9d6cc;
+  --outer-gradient-a: #dfdac9;
+  --outer-gradient-b: #d1cdc0;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: var(--outer);
+  background-image: radial-gradient(
+    120% 120% at 50% 0%,
+    var(--outer-gradient-a) 0%,
+    var(--outer-gradient-b) 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* -----------------------------------------
+   Phone frame
+   ----------------------------------------- */
+
+.phone-shell {
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.phone-scroll::-webkit-scrollbar { width: 0; }
+
+.phone-nav {
+  flex-shrink: 0;
+  background: rgba(249, 247, 242, 0.88);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  border-top: 1px solid var(--line-soft);
+}
+
+.phone-header {
+  flex-shrink: 0;
+  background: rgba(249, 247, 242, 0.88);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.phone-header.scrolled { border-bottom-color: var(--line-soft); }
+
+@media (min-width: 520px) {
+  body {
+    padding: 32px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .phone-shell {
+    width: 420px;
+    height: 900px;
+    max-height: calc(100vh - 64px);
+    min-height: 640px;
+    border-radius: 44px;
+    box-shadow:
+      0 40px 80px -24px rgba(10, 25, 18, 0.35),
+      0 16px 40px -8px rgba(10, 25, 18, 0.18),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+  /* Outer "app name" mark on desktop only */
+  body::before {
+    content: 'TrueTrace';
+    position: fixed;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(10, 25, 18, 0.4);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: -1;
+    display: none; /* currently disabled — enable if you want the outer mark */
+  }
+}
+
+/* -----------------------------------------
+   Typography
+   ----------------------------------------- */
+
+.display {
+  font-family: 'Fraunces', 'Plus Jakarta Sans', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+}
+.display em, .display i {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.number {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
+
+/* -----------------------------------------
+   Primitives
+   ----------------------------------------- */
+
+.card {
+  background: var(--surface-paper);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.card-tinted {
+  background: var(--surface-tinted);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.chip-mint { background: var(--surface-mint); color: var(--primary); }
+.chip-clay { background: var(--accent-soft); color: var(--accent); }
+.chip-gold { background: var(--gold-soft); color: var(--gold); }
+
+.divider {
+  height: 1px;
+  background: var(--line-soft);
+  border: 0;
+  margin: 0;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  border: 0;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--primary);
+  color: var(--on-primary);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.pill-btn:active { transform: scale(0.97); }
+.pill-btn:hover { opacity: 0.94; }
+
+.pill-btn-ghost {
+  background: transparent;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Material symbols weight default */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.icon-fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+/* -----------------------------------------
+   Bottom nav
+   ----------------------------------------- */
+
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 12px 22px;
+}
+
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 12px;
+  border-radius: 14px;
+  color: var(--ink-quiet);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+.nav-tab:hover { color: var(--primary); }
+.nav-tab span.material-symbols-outlined { font-size: 22px; }
+.nav-tab .nav-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.nav-tab.active {
+  color: var(--primary);
+}
+.nav-tab.active span.material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 500; }
+
+.nav-scan {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -26px;
+  box-shadow: 0 16px 32px -8px rgba(15, 61, 46, 0.4);
+}
+.nav-scan:hover { color: var(--on-primary); }
+
+/* -----------------------------------------
+   Utility
+   ----------------------------------------- */
+
+.mute { color: var(--ink-mute); }
+.quiet { color: var(--ink-quiet); }
+
+.hairline { border-top: 1px solid var(--line-soft); }
+
+.fade-top {
+  mask-image: linear-gradient(to bottom, transparent, black 32px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 32px);
+}

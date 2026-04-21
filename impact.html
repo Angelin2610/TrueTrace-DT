@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Impact · TrueTrace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .bar {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--line-soft);
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 999px;
+  }
+  .range-seg {
+    height: 6px;
+    border-radius: 999px;
+    background: var(--line-soft);
+    position: relative;
+  }
+</style>
+</head>
+<body>
+
+<div class="phone-shell">
+
+  <!-- Top bar -->
+  <header class="phone-header" style="padding: 22px 24px 14px; display:flex; align-items:center; justify-content:space-between;">
+    <div>
+      <p class="eyebrow" style="font-size:10px; margin:0;">Impact</p>
+      <p style="margin:2px 0 0; font-weight:700; font-size:16px;">Your footprint</p>
+    </div>
+    <div style="display:flex; gap:4px; padding: 4px; border-radius:999px; background: var(--surface-tinted);">
+      <button style="padding: 6px 12px; border-radius: 999px; background: var(--primary); color: var(--on-primary); font-weight:700; font-size:11px; border:0; letter-spacing:0.04em;">Month</button>
+      <button style="padding: 6px 12px; border-radius: 999px; background: transparent; color: var(--ink-mute); font-weight:600; font-size:11px; border:0;">Year</button>
+      <button style="padding: 6px 12px; border-radius: 999px; background: transparent; color: var(--ink-mute); font-weight:600; font-size:11px; border:0;">All</button>
+    </div>
+  </header>
+
+  <div class="phone-scroll">
+
+    <!-- Headline number -->
+    <section style="padding: 20px 28px 0;">
+      <p class="eyebrow">April 2026</p>
+      <h1 class="display" style="font-size: 68px; margin: 8px 0 0; line-height: 1;">
+        47<span style="font-size: 26px; font-family: 'Plus Jakarta Sans'; font-weight: 600; color: var(--ink-mute); letter-spacing: 0; margin-left: 6px;">kg</span>
+      </h1>
+      <p style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 400; margin: 8px 0 0; letter-spacing: -0.01em;">
+        <em>CO₂ avoided</em> this month.
+      </p>
+      <p class="mute" style="font-size: 13px; line-height: 1.5; margin: 10px 0 0; max-width: 280px;">
+        Equal to driving 190 km less than the UK household average.
+      </p>
+    </section>
+
+    <!-- Ring / breakdown -->
+    <section style="padding: 24px 24px 0;">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+
+        <div class="card">
+          <p class="eyebrow" style="font-size: 10px;">Water saved</p>
+          <p class="number" style="font-size: 32px; margin: 8px 0 0; color: var(--primary);">1,240<span style="font-size:12px; font-family: 'Plus Jakarta Sans'; font-weight:600; color: var(--ink-mute); margin-left:4px;">L</span></p>
+          <p class="quiet" style="font-size:11px; margin: 4px 0 0;">8 bathtubs</p>
+        </div>
+
+        <div class="card">
+          <p class="eyebrow" style="font-size: 10px;">Ethical rate</p>
+          <p class="number" style="font-size: 32px; margin: 8px 0 0; color: var(--primary);">89<span style="font-size:18px; font-family: 'Plus Jakarta Sans'; font-weight:600; color: var(--ink-mute); margin-left:2px;">%</span></p>
+          <div class="bar" style="margin-top: 10px;">
+            <div class="bar-fill" style="width: 89%;"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="eyebrow" style="font-size: 10px;">Products scanned</p>
+          <p class="number" style="font-size: 32px; margin: 8px 0 0; color: var(--primary);">32</p>
+          <p class="quiet" style="font-size:11px; margin: 4px 0 0;">+8 vs last month</p>
+        </div>
+
+        <div class="card">
+          <p class="eyebrow" style="font-size: 10px;">Scanning streak</p>
+          <p class="number" style="font-size: 32px; margin: 8px 0 0; color: var(--primary);">18<span style="font-size:12px; font-family: 'Plus Jakarta Sans'; font-weight:600; color: var(--ink-mute); margin-left:4px;">days</span></p>
+          <p class="quiet" style="font-size:11px; margin: 4px 0 0;">🔥 personal best</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Category breakdown -->
+    <section style="padding: 28px 24px 0;">
+      <p class="eyebrow" style="padding: 0 4px 16px;">Where your impact came from</p>
+
+      <div class="card">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span class="material-symbols-outlined" style="font-size:18px; color: var(--primary);">restaurant</span>
+            <span style="font-weight:700; font-size:13px;">Groceries</span>
+          </div>
+          <span class="number" style="font-size:15px; color: var(--primary);">21<span style="font-size:11px; color: var(--ink-mute); margin-left:2px;">kg</span></span>
+        </div>
+        <div class="range-seg"><div style="position:absolute; left:0; top:0; height:100%; width:62%; background: var(--primary); border-radius:999px;"></div></div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; margin: 18px 0 8px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span class="material-symbols-outlined" style="font-size:18px; color: var(--primary);">checkroom</span>
+            <span style="font-weight:700; font-size:13px;">Apparel</span>
+          </div>
+          <span class="number" style="font-size:15px; color: var(--primary);">14<span style="font-size:11px; color: var(--ink-mute); margin-left:2px;">kg</span></span>
+        </div>
+        <div class="range-seg"><div style="position:absolute; left:0; top:0; height:100%; width:38%; background: var(--secondary); border-radius:999px;"></div></div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; margin: 18px 0 8px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span class="material-symbols-outlined" style="font-size:18px; color: var(--primary);">face</span>
+            <span style="font-weight:700; font-size:13px;">Personal care</span>
+          </div>
+          <span class="number" style="font-size:15px; color: var(--primary);">8<span style="font-size:11px; color: var(--ink-mute); margin-left:2px;">kg</span></span>
+        </div>
+        <div class="range-seg"><div style="position:absolute; left:0; top:0; height:100%; width:22%; background: var(--accent); border-radius:999px;"></div></div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; margin: 18px 0 8px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span class="material-symbols-outlined" style="font-size:18px; color: var(--primary);">chair</span>
+            <span style="font-weight:700; font-size:13px;">Home</span>
+          </div>
+          <span class="number" style="font-size:15px; color: var(--primary);">4<span style="font-size:11px; color: var(--ink-mute); margin-left:2px;">kg</span></span>
+        </div>
+        <div class="range-seg"><div style="position:absolute; left:0; top:0; height:100%; width:11%; background: var(--gold); border-radius:999px;"></div></div>
+      </div>
+    </section>
+
+    <!-- Milestone callout -->
+    <section style="padding: 28px 24px 0;">
+      <div class="card" style="background: var(--primary); color: var(--on-primary); border-radius: 22px; padding: 22px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span class="material-symbols-outlined icon-fill" style="color: #c8dec9; font-size: 22px;">military_tech</span>
+          <p class="eyebrow" style="margin:0; color: rgba(249,247,242,0.7);">Next milestone</p>
+        </div>
+        <p style="font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; margin: 12px 0 0; line-height: 1.3;">
+          23 scans away from <em>Grove Guardian.</em>
+        </p>
+        <div class="bar" style="margin-top: 18px; background: rgba(249,247,242,0.15);">
+          <div class="bar-fill" style="width: 68%; background: #c8dec9;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-top: 10px; font-size: 11px; opacity: 0.7;">
+          <span>127 / 150</span>
+          <span>Unlocks tree planting</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaderboard note -->
+    <section style="padding: 28px 24px 0;">
+      <a href="#" class="card" style="display:flex; align-items:center; gap:14px; padding: 16px;">
+        <div style="width:40px; height:40px; border-radius:999px; background: var(--surface-mint); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <span class="material-symbols-outlined" style="font-size:20px; color: var(--primary);">trending_up</span>
+        </div>
+        <div style="flex:1;">
+          <p style="margin:0; font-weight:700; font-size:13px;">You're in the top 12%</p>
+          <p class="mute" style="margin:3px 0 0; font-size:11px;">Of TrueTrace users this month</p>
+        </div>
+        <span class="material-symbols-outlined" style="font-size:18px; color: var(--ink-quiet);">arrow_forward</span>
+      </a>
+    </section>
+
+    <div style="height: 40px;"></div>
+
+  </div>
+
+  <!-- Bottom nav -->
+  <nav class="phone-nav">
+    <div class="nav-tabs">
+      <a href="home.html" class="nav-tab">
+        <span class="material-symbols-outlined">home</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="impact.html" class="nav-tab active">
+        <span class="material-symbols-outlined">eco</span>
+        <span class="nav-label">Impact</span>
+      </a>
+      <a href="scan.html" class="nav-scan" aria-label="Scan">
+        <span class="material-symbols-outlined">qr_code_scanner</span>
+      </a>
+      <a href="supply-chain.html" class="nav-tab">
+        <span class="material-symbols-outlined">explore</span>
+        <span class="nav-label">Explore</span>
+      </a>
+      <a href="profile.html" class="nav-tab">
+        <span class="material-symbols-outlined">person</span>
+        <span class="nav-label">Profile</span>
+      </a>
+    </div>
+  </nav>
+
+</div>
+
+</body>
+</html>

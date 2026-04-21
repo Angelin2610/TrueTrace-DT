@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Supply Chain · TrueTrace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .stop {
+    position: relative;
+    padding-left: 44px;
+    padding-bottom: 32px;
+  }
+  .stop:last-child { padding-bottom: 0; }
+  .stop::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 32px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line);
+  }
+  .stop:last-child::before { display: none; }
+  .stop-dot {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: var(--surface-mint);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .stop-dot.active {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+</style>
+</head>
+<body>
+
+<div class="phone-shell">
+
+  <!-- Top bar -->
+  <header class="phone-header" style="padding: 20px 20px 14px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="product.html" style="width:40px; height:40px; border-radius:999px; background: var(--surface-tinted); display:flex; align-items:center; justify-content:center;">
+      <span class="material-symbols-outlined" style="font-size:20px; color: var(--primary-ink);">arrow_back</span>
+    </a>
+    <div style="text-align:center;">
+      <p class="eyebrow" style="font-size:9px; margin:0;">Supply Chain</p>
+      <p style="margin:2px 0 0; font-weight:700; font-size:13px;">Altura Organic Coffee</p>
+    </div>
+    <button style="width:40px; height:40px; border-radius:999px; background: var(--surface-tinted); display:flex; align-items:center; justify-content:center; border:0;">
+      <span class="material-symbols-outlined" style="font-size:20px; color: var(--primary-ink);">map</span>
+    </button>
+  </header>
+
+  <div class="phone-scroll">
+
+    <!-- Editorial intro -->
+    <section style="padding: 20px 24px 0;">
+      <p class="eyebrow">The Journey</p>
+      <h1 class="display" style="font-size: 32px; margin: 10px 0 0;">
+        From Huila, Colombia<br />
+        to <em>your kitchen.</em>
+      </h1>
+      <div style="display:flex; gap: 20px; margin-top: 20px;">
+        <div>
+          <p class="number" style="font-size: 24px; color: var(--primary); margin:0;">5</p>
+          <p class="quiet" style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; margin:4px 0 0;">Stops</p>
+        </div>
+        <div>
+          <p class="number" style="font-size: 24px; color: var(--primary); margin:0;">9,042<span style="font-size:12px; font-family: 'Plus Jakarta Sans'; font-weight:600; color: var(--ink-mute); margin-left:4px;">km</span></p>
+          <p class="quiet" style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; margin:4px 0 0;">Traveled</p>
+        </div>
+        <div>
+          <p class="number" style="font-size: 24px; color: var(--primary); margin:0;">47<span style="font-size:12px; font-family: 'Plus Jakarta Sans'; font-weight:600; color: var(--ink-mute); margin-left:4px;">days</span></p>
+          <p class="quiet" style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; margin:4px 0 0;">Bean to bag</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map preview -->
+    <section style="padding: 24px 24px 0;">
+      <div style="position: relative; height: 180px; border-radius: 20px; overflow: hidden; background: var(--surface-mint);">
+        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format&fit=crop"
+             alt="Illustrative world map textured on paper"
+             style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.85;" />
+        <div style="position:absolute; inset:0; background: linear-gradient(180deg, rgba(249,247,242,0) 40%, rgba(249,247,242,0.7) 100%);"></div>
+        <!-- pins -->
+        <div style="position:absolute; top: 55%; left: 22%; width: 10px; height: 10px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 6px rgba(182, 87, 58, 0.22);"></div>
+        <div style="position:absolute; top: 40%; left: 52%; width: 10px; height: 10px; border-radius: 999px; background: var(--primary); box-shadow: 0 0 0 6px rgba(15, 61, 46, 0.2);"></div>
+        <div style="position:absolute; left:16px; bottom:14px; display:flex; gap:6px;">
+          <span class="chip chip-clay">Origin</span>
+          <span class="chip chip-mint">Destination</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey timeline -->
+    <section style="padding: 32px 28px 0;">
+
+      <div class="stop">
+        <div class="stop-dot">01</div>
+        <p class="eyebrow" style="font-size:10px; margin:0;">Harvest · Apr 3, 2026</p>
+        <p style="font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin:8px 0 6px; letter-spacing:-0.01em;">Finca La Esperanza</p>
+        <p class="mute" style="font-size:13px; line-height:1.55; margin:0;">
+          Hand-picked at 1,820 m by María Castaño and her family — a third-generation farm co-op of 47 smallholders in Huila, Colombia.
+        </p>
+        <div style="display:flex; gap:6px; margin-top:10px;">
+          <span class="chip chip-mint">Shade grown</span>
+          <span class="chip chip-mint">Co-op owned</span>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot">02</div>
+        <p class="eyebrow" style="font-size:10px; margin:0;">Washed · Apr 6, 2026</p>
+        <p style="font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin:8px 0 6px; letter-spacing:-0.01em;">Pitalito Station</p>
+        <p class="mute" style="font-size:13px; line-height:1.55; margin:0;">
+          Water-neutral washing station running a closed-loop filtration system — wastewater is cleaned and returned to the Magdalena watershed.
+        </p>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot">03</div>
+        <p class="eyebrow" style="font-size:10px; margin:0;">Shipped · Apr 14, 2026</p>
+        <p style="font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin:8px 0 6px; letter-spacing:-0.01em;">SeaChange Vessel</p>
+        <p class="mute" style="font-size:13px; line-height:1.55; margin:0;">
+          Cartagena → Brooklyn, on a biofuel cargo line cutting maritime emissions 60% against conventional heavy fuel oil.
+        </p>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot">04</div>
+        <p class="eyebrow" style="font-size:10px; margin:0;">Roasted · May 7, 2026</p>
+        <p style="font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin:8px 0 6px; letter-spacing:-0.01em;">Atlas Roasters</p>
+        <p class="mute" style="font-size:13px; line-height:1.55; margin:0;">
+          Small-batch medium roast at a solar-powered roastery in Brooklyn, NY — packaged in home-compostable fibre bags.
+        </p>
+      </div>
+
+      <div class="stop">
+        <div class="stop-dot active">
+          <span class="material-symbols-outlined icon-fill" style="font-size:14px;">location_on</span>
+        </div>
+        <p class="eyebrow" style="font-size:10px; margin:0; color: var(--primary);">Delivered · May 18, 2026</p>
+        <p style="font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin:8px 0 6px; letter-spacing:-0.01em;">Your shelf</p>
+        <p class="mute" style="font-size:13px; line-height:1.55; margin:0;">
+          Arrived at Whole Earth Co-op, Hackney — where Anju picked it up 2 days ago.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Ledger note -->
+    <section style="padding: 36px 24px 0;">
+      <div class="card-tinted" style="display:flex; align-items:flex-start; gap:14px;">
+        <span class="material-symbols-outlined" style="font-size:22px; color: var(--primary); margin-top: 2px;">verified_user</span>
+        <div>
+          <p style="margin:0; font-weight:700; font-size:13px;">Integrity guaranteed</p>
+          <p class="mute" style="margin:6px 0 0; font-size:12px; line-height:1.55;">
+            Every step verified by an independent auditor and written to the TrueTrace public ledger.
+            <a href="#" style="color: var(--primary); font-weight:600;">View hash →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div style="height: 40px;"></div>
+
+  </div>
+
+  <!-- Bottom nav -->
+  <nav class="phone-nav">
+    <div class="nav-tabs">
+      <a href="home.html" class="nav-tab">
+        <span class="material-symbols-outlined">home</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="impact.html" class="nav-tab">
+        <span class="material-symbols-outlined">eco</span>
+        <span class="nav-label">Impact</span>
+      </a>
+      <a href="scan.html" class="nav-scan" aria-label="Scan">
+        <span class="material-symbols-outlined">qr_code_scanner</span>
+      </a>
+      <a href="supply-chain.html" class="nav-tab active">
+        <span class="material-symbols-outlined">explore</span>
+        <span class="nav-label">Explore</span>
+      </a>
+      <a href="profile.html" class="nav-tab">
+        <span class="material-symbols-outlined">person</span>
+        <span class="nav-label">Profile</span>
+      </a>
+    </div>
+  </nav>
+
+</div>
+
+</body>
+</html>
